@@ -1,8 +1,4 @@
-template <typename T>
-struct Nodo {
-    T info;
-    Nodo<T>* sig;
-};
+#include "listaEnlazada.h"
 
 // Básicas
 template <typename T>
@@ -46,7 +42,7 @@ template <typename T>
 void mostrar(Nodo<T>* p) {
     Nodo<T>* aux = p;
     while (aux != NULL) {
-        cout << aux->info << endl;
+        std::cout << aux->info << std::endl;
         aux = aux->sig;
     }
 }

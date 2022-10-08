@@ -1,12 +1,10 @@
-#include <iostream>
+#include "criteriosDeBusqueda.h"
 
-using namespace std;
-
-int criterioAZ(string e1, string e2) {
+int criterioAZ(std::string e1, std::string e2) {
     return e1 > e2 ? 1 : e1 < e2 ? -1 : 0;
 }
 
-int criterioZA(string e1, string e2) {
+int criterioZA(std::string e1, std::string e2) {
     return e2 > e1 ? 1 : e2 < e1 ? -1 : 0;
 }
 

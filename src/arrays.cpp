@@ -1,22 +1,18 @@
-#include <iostream>
-
-using namespace std;
+#include "arrays.h"
 
 // Agregar
 template <typename T>
 void agregar(T arr[], int& len, T v) {
     arr[len] = v;
     len++;
-    return;
 }
 
 // Mostrar
 template <typename T>
 void mostrar(T arr[], int len) {
     for (int i = 0; i < len; i++) {
-        cout << arr[i] << endl;
+        std::cout << arr[i] << std::endl;
     }
-    return;
 }
 
 // Buscar
@@ -36,7 +32,6 @@ void eliminar(T arr[], int& len, int pos) {
         arr[i] = arr[i + 1];
     }
     len--;
-    return;
 }
 
 // Insertar
@@ -47,7 +42,6 @@ void insertar(T arr[], int& len, T v, int pos) {
     }
     arr[pos] = v;
     len++;
-    return;
 }
 
 // Insertar Ordenado

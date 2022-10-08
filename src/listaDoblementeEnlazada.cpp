@@ -1,15 +1,4 @@
-template <typename T>
-struct ListaDoblementeEnlazada {
-    Nodo*<T> primero;
-    Nodo*<T> ultimo;
-};
-
-template <typename T>
-struct Nodo {
-    T elem;
-    Nodo*<T> ant;
-    Nodo*<T> sig;
-};
+#include "listaDoblementeEnlazada.h"
 
 // Inicialización
 template <typename T>
@@ -55,14 +44,13 @@ void mostrar(Nodo<T>* primero, void (*mostrarLinea)(T, T)) {
         mostrarLinea(aux->info);
         aux = aux->sig;
     }
-    return;
 }
 
 // Vacia
 template <typename T>
 bool vacia(Nodo<T>* primero) {
     Nodo<T>* aux = primero->sig;
-    return aux->sig == NULL ? true : false;
+    return aux->sig == NULL;
 }
 
 // Frente
@@ -77,7 +65,7 @@ template <typename T>
 void insertarOrdenado(Nodo<T>* cabecera, T v, int(*criterio)(T, T)) {
     Nodo<T>* nuevo = new Nodo<T>();
     nuevo->info = v;
-    Nodo<T>* aux = primero->sig;
+    Nodo<T>* aux = cabecera->sig;
     while (aux->sig != NULL && criterio(aux->info, v) <= 0) {
         aux = aux->sig;
     }
@@ -86,7 +74,6 @@ void insertarOrdenado(Nodo<T>* cabecera, T v, int(*criterio)(T, T)) {
     aux->ant = nuevo;
     aux = nuevo->ant;
     aux->sig = nuevo;
-    return;
 }
 
 // Buscar en Lista

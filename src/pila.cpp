@@ -1,8 +1,4 @@
-template <typename T>
-struct Nodo {
-    T info;
-    Nodo<T>* sig;
-};
+#include "pila.h"
 
 template <typename T>
 T pop(Nodo<T>*& p) {
@@ -20,5 +16,4 @@ void push(Nodo<T>*& p, T v) {
     aux->info = v;
     aux->sig = p;
     p = aux;
-    return;
 }

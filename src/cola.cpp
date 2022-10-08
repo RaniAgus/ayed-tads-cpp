@@ -1,8 +1,4 @@
-template <typename T>
-struct Nodo {
-    T info;
-    Nodo<T>* sig;
-};
+#include "cola.h"
 
 template <typename T>
 void agregar(Nodo<T>*& p, Nodo<T>*& q, T v) {

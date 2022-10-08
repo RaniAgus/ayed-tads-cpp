@@ -1,12 +1,9 @@
-#include <iostream>
-
-using namespace std;
+#include "archivos.h"
 
 // Básicas
 template <typename T>
 void write(FILE* f, T v) {
     fwrite(&v, sizeof(T), 1, f);
-    return;
 }
 
 template <typename T>
@@ -20,7 +17,6 @@ T read(FILE* f) {
 template <typename T>
 void seek(FILE* f, int n) {
     fseek(f, n * sizeof(T), SEEK_SET);
-    return;
 }
 
 template <typename T>
